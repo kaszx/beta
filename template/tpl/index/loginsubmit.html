@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        span{
+        color: darkred;
+        margin-right: 20px;
+        }
+        span#show{
+            border: none;
+            color: #000;
+        }
+        body{
+        width:1080px;
+        margin: auto;
+        }
+        div{
+            position: fixed;
+            bottom: 65%;
+            left:25%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p><span class="logininfo">登录成功，欢迎您：{$Personnel}</span><a href='lists.html'>点击跳转</a></p>
+    <script>
+        var t=5;//设定跳转的时间
+        setInterval("refer()",1000); //启动1秒定时
+        function refer(){
+            if(t==0){
+                location="lists.html"; //#设定跳转的链接地址
+            }
+            document.getElementById('show').innerHTML=""+t+"秒后跳转到会员列表"; // 显示倒计时
+            t--; // 计数器递减
+//本文转自：
+        }
+    </script>
+    <span id="show"></span>
+</div>
+</body>
+</html>
