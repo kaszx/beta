@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员列表</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="main">
+        <p><span>当前操作员：{$Personnel}</span><a href="/loginout.html">退出登录</a></p>
+        <table cellpadding="1" cellspacing="1" border="1">
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>出生日期</th>
+                <th>年龄</th>
+                <th>手机</th>
+                <th>卡号</th>
+                <th>卡类型</th>
+                <th>可用积分</th>
+                <th>编辑</th>
+            </tr>
+            {foreach $list as $row}
+            <tr>
+                <td>{$row.Member}</td>
+                <td>{$row.Sex}</td>
+                <td>{$row.Birthday}</td>
+                <td>{$row.Age}</td>
+                <td>{$row.Mobile}</td>
+                <td>{$row.Card}</td>
+                <td>{$row.CardType}</td>
+                <td>{$row.AvailablePoint}</td>
+                <th><form class="edit_dad" action="/edit.html" method="post">
+                    <input type="hidden" name="ID" value="{$row.ID}" />
+                    <input class="edit" type="submit" value="编辑" />
+                </form></th>
+            </tr>
+            {/foreach}
+        </table>
+        <div class="nav">
+            <div class="sel">
+                <span>每页显示：</span>
+                <form action="/lists.html" method="post" onchange="go()" name="rows">
+                    <select name="num">
+                        {if $nums eq 10}
+                        <option value="10" selected>10条</option>
+                        <option value="15">15条</option>
+                        <option value="20">20条</option>
+                        <option value="30">30条</option>
+                        <option value="50">50条</option>
+                        {elseif $nums eq 15}
+                        <option value="10">10条</option>
+                        <option value="15" selected>15条</option>
+                        <option value="20">20条</option>
+                        <option value="30">30条</option>
+                        <option value="50">50条</option>
+                        {elseif $nums eq 20}
+                        <option value="10">10条</option>
+                        <option value="15">15条</option>
+                        <option value="20" selected>20条</option>
+                        <option value="30">30条</option>
+                        <option value="50">50条</option>
+                        {elseif $nums eq 30}
+                        <option value="10">10条</option>
+                        <option value="15">15条</option>
+                        <option value="20">20条</option>
+                        <option value="30" selected>30条</option>
+                        <option value="50">50条</option>
+                        {elseif $nums eq 50}
+                        <option value="10">10条</option>
+                        <option value="15">15条</option>
+                        <option value="20">20条</option>
+                        <option value="30">30条</option>
+                        <option value="50" selected>50条</option>
+                        {/if}
+                    </select>
+                </form>
+             </div>
+            {$nav}
+        </div>
+    </div>
+</body>
+</html>

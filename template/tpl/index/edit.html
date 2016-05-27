@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑会员信息</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body{
+            width:1080px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="modify.html" method="post">
+        <label>名字</label>
+        <input class="hehe" type="text" name="Member" value="{$Member}" />
+        <label>性别</label>
+            <select name="Sex">
+                {if $Sex eq '男'}
+                <option value="男" selected>男</option>
+                <option value="女">女</option>
+                {else}
+                <option value="男">男</option>
+                <option value="女" selected>女</option>
+                {/if}
+            </select>
+        <label>手机</label>
+        <input class="hehe" type="text" name="Mobile" value="{$Mobile}" />
+        <input type="hidden" name="id" value="{$id}" />
+        <input class="edit" type="submit" value="提交"/>
+    </form>
+</body>
+</html>

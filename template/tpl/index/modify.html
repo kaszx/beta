@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结果</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body{
+            width:1080px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    {if $res eq false}
+        修改失败！
+    {elseif $row eq 0}
+        修改失败！修改数据与原修改数据一样。
+    {else}
+        修改成功！已修改{$row}条记录。
+    {/if}
+    <a href="lists.html">返回会员列表</a>
+</body>
+</html>
