@@ -26,7 +26,13 @@ class mysql{
             die('操作失败'.$this->mysqli->error);
         }
     }
-    public function findAll($sql){
+    public function findAll($table,$arr,$where = ''){
+        $arr = implode(',',$arr);
+        if($where === ''){
+            $sql = "SELECT {$arr} FROM {$table}";
+        }else{
+            $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
+        }
         $res = $this->query($sql);
         while ($row = $res->fetch_assoc()){
             $rows[] = $row;
@@ -38,7 +44,11 @@ class mysql{
     }
     public function num_row($table,$arr,$where){
         $arr = implode(',',$arr);
-        $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
+        if($where === ''){
+            $sql = "SELECT {$arr} FROM {$table}";
+        }else{
+            $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
+        }
         $res = $this->query($sql);
         return $res->num_rows;
     }
@@ -49,6 +59,16 @@ class mysql{
     public function insert($table,$values){
         $value = implode("','",$values);
         $sql = "INSERT INTO {$table} VALUES('{$value}')";
+        return $this->query($sql);
+    }
+    public function insert_new($table,$values){
+        foreach ($values as $key => $row){
+            $keys[] = $key;
+            $rows[] = $row;
+        }
+        $key = implode(",",$keys);
+        $value = implode("','",$rows);
+        $sql = "INSERT INTO {$table}({$key}) VALUES('{$value}')";
         return $this->query($sql);
     }
     public function select($table,$arr,$where){

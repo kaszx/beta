@@ -16,10 +16,10 @@ class DB{
     public static function findOne($sql){
         return self::$db->findOne($sql);
     }
-    public static function findAll($sql){
-        return self::$db->findAll($sql);
+    public static function findAll($table,$arr,$where){
+        return self::$db->findAll($table,$arr,$where);
     }
-    public static function num_row($table,$arr,$where){
+    public static function num_row($table,$arr,$where = ''){
         return self::$db->num_row($table,$arr,$where);
     }
     public static function aff_row(){
@@ -27,6 +27,9 @@ class DB{
     }
     public static function insert($table,$arr){
         return self::$db->insert($table,$arr);
+    }
+    public static function insert_new($table,$arr){
+        return self::$db->insert_new($table,$arr);
     }
     public static function select($table,$arr,$where){
         return self::$db->select($table,$arr,$where);

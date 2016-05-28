@@ -79,4 +79,24 @@ class adminController{
         VIEW::assign($auth);
         VIEW::display('template/tpl/admin/member-list.html');
     }
+    public function admin_list(){
+        $adminobj = M('admin');
+        $list = $adminobj->admin_list();
+        VIEW::assign($list);
+        VIEW::display('template/tpl/admin/admin-list.html');
+    }
+    public function admin_add(){
+        $adminobj = M('admin');
+        $list = $adminobj->admin_table();
+        VIEW::assign($list);
+        VIEW::display('template/tpl/admin/admin-add.html');
+    }
+    public function admin_submit(){
+        $adminobj = M('admin');
+        $check['check'] = $adminobj->admin_add();
+        VIEW::assign($check);
+        VIEW::display('template/tpl/admin/admin-submit.html');
+    }
+    public function test(){
+    }
 }

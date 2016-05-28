@@ -6,7 +6,7 @@ a{color:#333}a:hover,a:focus,.maincolor,.maincolor a{color:#06c}
 	.navbar-logo,.navbar-logo-m,.navbar-slogan,.navbar-userbar{color:#282828}/*logo 及 用户信息文字颜色*/
 	.navbar-logo:hover,.navbar-logo-m:hover{color:#282828;text-decoration: none}
 	
-.navbar-nav > ul > li, .navbar-nav > ul > li > a{ color:#282828}/*顶部导航文字颜色*/
+.navbar-nav > ul > li, .navbar-nav > ul > li > a{ color:#282828;padding-right: 10px;}/*顶部导航文字颜色*/
 .navbar-userbar > ul> > li,.navbar-userbar > ul> > li > a{ color:#282828}
 
 .Hui-aside{}/*侧边栏*/
