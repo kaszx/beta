@@ -1,4 +1,27 @@
-﻿﻿<!DOCTYPE HTML>
+<?php
+/* Smarty version 3.1.29, created on 2016-05-27 17:28:02
+  from "/var/www/beta/template/tpl/admin/index.html" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_57481322682305_00687097',
+  'file_dependency' => 
+  array (
+    '166244003c929958d7ae80227da39bed58f62252' => 
+    array (
+      0 => '/var/www/beta/template/tpl/admin/index.html',
+      1 => 1464341277,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_57481322682305_00687097 ($_smarty_tpl) {
+?>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,9 +32,15 @@
 <LINK rel="Bookmark" href="/favicon.ico" >
 <LINK rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
-<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/html5.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/respond.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/PIE_IE678.js"><?php echo '</script'; ?>
+>
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
@@ -20,17 +49,21 @@
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-<script>DD_belatedPNG.fix('*');</script>
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>DD_belatedPNG.fix('*');<?php echo '</script'; ?>
+>
 <![endif]-->
 <title>灰辉商城</title>
-<meta name="keywords" content="灰辉商城-Superhui">
-<meta name="description" content="灰辉商城 v0.1">
+<meta name="keywords" content="灰辉商城,SuperHui">
+<meta name="description" content="灰辉的第一个项目">
 </head>
 <body>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">灰辉商城</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">Hui</a> <span class="logo navbar-slogan f-l mr-10 hidden-xs">v0.2</span> <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">灰辉商城</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/aboutHui.shtml">H-ui</a> <span class="logo navbar-slogan f-l mr-10 hidden-xs">v0.1</span> <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<nav class="nav navbar-nav">
 				<ul class="cl">
 					<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
@@ -45,7 +78,7 @@
 			</nav>
 			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 				<ul class="cl">
-					<li>{$Department}</li>
+					<li>超级管理员</li>
 					<li class="dropDown dropDown_hover"> <a href="#" class="dropDown_A">{$Personnel} <i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
 							<li><a href="#">个人信息</a></li>
@@ -76,7 +109,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="article-list.html" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
+					<li><a _href="/article_list.html" data-title="资讯管理" href="javascript:void(0)">资讯管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -111,7 +144,7 @@
 			<dt><i class="Hui-iconfont">&#xe60d;</i> 会员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a _href="member-list.html" data-title="会员列表" href="javascript:;">会员列表</a></li>
+					<li><a _href="/member_list.html" data-title="会员列表" href="javascript:;">会员列表</a></li>
 					<li><a _href="member-del.html" data-title="删除的会员" href="javascript:;">删除的会员</a></li>
 					<li><a _href="member-level.html" data-title="等级管理" href="javascript:;">等级管理</a></li>
 					<li><a _href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li>
@@ -176,11 +209,20 @@
 		</div>
 	</div>
 </section>
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="lib/layer/2.1/layer.js"></script> 
-<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script> 
-<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> 
-<script type="text/javascript">
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"><?php echo '</script'; ?>
+> 
+<?php echo '<script'; ?>
+ type="text/javascript" src="lib/layer/2.1/layer.js"><?php echo '</script'; ?>
+> 
+<?php echo '<script'; ?>
+ type="text/javascript" src="static/h-ui/js/H-ui.js"><?php echo '</script'; ?>
+> 
+<?php echo '<script'; ?>
+ type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"><?php echo '</script'; ?>
+> 
+<?php echo '<script'; ?>
+ type="text/javascript">
 /*资讯-添加*/
 function article_add(title,url){
 	var index = layer.open({
@@ -212,6 +254,8 @@ function product_add(title,url){
 function member_add(title,url,w,h){
 	layer_show(title,url,w,h);
 }
-</script>
+<?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}
