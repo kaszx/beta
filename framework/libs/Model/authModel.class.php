@@ -37,7 +37,7 @@ class authModel{
     }
     private function checkuser($username,$password){
         $adminobj = M('admin');
-        $auth = $adminobj->findOne_by_username($username);
+        $auth = $adminobj->login_check($username);
         if(!empty($password)){
             $password = strtoupper(md5($password));
         }

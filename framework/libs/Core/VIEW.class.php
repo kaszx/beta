@@ -18,9 +18,6 @@ class VIEW{
             self::$view->assign($key,$value);
         }
     }
-    public static function assign_old($key,$data){
-        self::$view->assign($key,$data);
-    }
     public static function display($template){
         self::$view->display($template);
     }

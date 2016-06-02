@@ -19,14 +19,16 @@ class mysql{
     public function query($sql){
         return $this->mysqli->query($sql);
     }
-    public function findOne($sql){
+    public function findOne($table,$arr,$where){
+        $arr = implode(',',$arr);
+        $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
         if($res = $this->query($sql)){
             return $res->fetch_assoc();
         }else{
             die('操作失败'.$this->mysqli->error);
         }
     }
-    public function findAll($table,$arr,$where = ''){
+    public function findAll($table,$arr,$where){
         $arr = implode(',',$arr);
         if($where === ''){
             $sql = "SELECT {$arr} FROM {$table}";
@@ -37,7 +39,12 @@ class mysql{
         while ($row = $res->fetch_assoc()){
             $rows[] = $row;
         }
-        return $rows;
+        if (isset($rows)){
+            $_SESSION['time'] = time();
+            return $rows;
+        }else{
+            return false;
+        }
     }
     public function aff_row(){
         return $this->mysqli->affected_rows;
@@ -49,12 +56,25 @@ class mysql{
         }else{
             $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
         }
+        if ($this->mysqli->errno){
+            $this->err($this->mysqli->errno,$this->mysqli->error);
+        }
         $res = $this->query($sql);
         return $res->num_rows;
     }
-    public function update($sql){
-        $res = $this->query($sql);
-        return $res;
+    public function update($table,$arr,$where){
+        $res='';
+        foreach($arr as $key => $value){
+            $res .= $key." = '".$value."', ";
+
+        }
+        $res = substr($res,0,-2);
+        if($where == ''){
+            $sql = "UPDATE {$table} SET {$res}";
+        }else{
+            $sql = "UPDATE {$table} SET {$res} WHERE {$where}";
+        }
+        return $this->query($sql);
     }
     public function insert($table,$values){
         $value = implode("','",$values);
@@ -70,12 +90,6 @@ class mysql{
         $value = implode("','",$rows);
         $sql = "INSERT INTO {$table}({$key}) VALUES('{$value}')";
         return $this->query($sql);
-    }
-    public function select($table,$arr,$where){
-        $arr = implode(',',$arr);
-        $sql = "SELECT {$arr} FROM {$table} WHERE {$where}";
-        $res = $this->query($sql);
-        return $res->fetch_assoc();
     }
     public function err($errno,$error){
         die('程序出错！错误代码：'.$errno.'<br />错误信息：'.$error);

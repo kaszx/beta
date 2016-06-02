@@ -1,3 +1,77 @@
 @charset "utf-8";
 /* 你自己的样式 */
+div .sel{
+    float: left;
+    padding-right: 5px;
+}
+.sel span{
+    margin-top: 9px;
+    float: left;
+}
+.sel form{
+    margin-top: 9px;
+    float: left;
+}
+.sel select{
+    font-size: 1em;
+    width: 110%;
+}
+.pagination li{
+    float: left;
+    height: 50px;
+    padding: 10px 5px ;
+}
+.pagination a{
+    border: #94bab4 1px solid;
+    border-radius: 3px;
+    padding: 1px 10px ;
+    cursor: default;
+}
 
+
+
+a.no{
+    border: #b3bab7 1px solid;
+    color: #b3bab7;
+    cursor: default;
+}
+.pagination a.no:hover{
+    border: #b3bab7 1px solid;
+    color: #b3bab7;
+    background: none;
+    cursor: default;
+}
+a.active{
+    background: #94bab4;
+    color: white;
+    border: #94bab4 1px solid;
+    text-decoration: none;
+    cursor: default;
+}
+
+.pagination a:hover{
+    background: #94bab4;
+    color: white;
+    border: #94bab4 1px solid;
+    text-decoration: none;
+}
+.pagination a:active{
+    color:#94bab4;
+    background: white;
+}
+a.active:active{
+    background: #94bab4;
+    color: white;
+    border: #94bab4 1px solid;
+    text-decoration: none;
+    cursor: default;
+}
+.member_show{
+    float: left;
+    margin-left: 25px;
+    padding: 0 20px 0 25px;
+}
+th.text-r{
+    width:100px;
+    text-align:justify;!important
+}

@@ -13,11 +13,11 @@ $config = array(
         'compile_dir'=>'template/tpl_c'
     ),
     'DB_config'=>array(
-        'dbhost'=>'localhost',
+        'dbhost'=>'192.168.1.240',
         'dbuser'=>'root',
         'dbpasswd'=>'123456',
         'dbname'=>'oragtrade',
-        'dbport'=>'3306',
+        'dbport'=>'3308',
         'dbcharset'=>'utf8'
     )
 )

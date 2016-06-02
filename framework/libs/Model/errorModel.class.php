@@ -8,6 +8,7 @@
  */
 class errorModel{
     public function showmessage($mes,$url){
+        echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
         echo "<script> alert('".$mes."');parent.location.href='".$url."'; </script>";
     }
 }

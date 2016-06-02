@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4098086193">
-    <data-source source="LOCAL" name="MySQL - @192.168.1.252" uuid="12dc4fbd-0b0a-49eb-b351-bb1ac893824c">
+  <component name="DataSourceManagerImpl" format="xml" hash="2728112902">
+    <data-source source="LOCAL" name="MySQL - oragtrade@192.168.1.240" uuid="87c6b3cc-89c8-4c2e-a1d6-b06348c69628">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.1.252:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://192.168.1.240:3308/oragtrade</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
